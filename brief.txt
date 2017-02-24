@@ -1,1 +1,7 @@
-this is my brief
+Fantasy Strategy game
+
+the premise for the fantasy game is to be able to manage resources in your city/domain and seige other players domains. 
+
+resources will continually grow over real time mechanics. Players will be able to attack settlements to steal resources or take over them to then build upon. 
+
+this will be a web based app that can later be ported over to mobile after testing on React and Ruby on Rails.
