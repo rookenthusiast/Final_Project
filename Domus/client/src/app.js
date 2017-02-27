@@ -1,13 +1,10 @@
 const UI = require("./views/ui");
 
-class App {
-
-constructor(){
-  this.ui = UI;
-}
-
+var app = function(){
+  const ui = new UI();
 }
 
 
-window.onload = App; 
+
+window.onload = app; 
 
