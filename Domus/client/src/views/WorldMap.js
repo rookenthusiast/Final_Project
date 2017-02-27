@@ -5,8 +5,7 @@ var WorldMap = function(size){
  this.grid = new Grid(size);
  this.canvas = document.querySelector('#main-canvas');
  this.context = this.canvas.getContext('2d');
- this.createNewTile("orcs",2,2);
- this.createNewTile("elves",1,4);
+ this.addVillage(3);
  this.drawMap();
 
  this.canvas.onclick = function (event) {
@@ -15,19 +14,6 @@ var WorldMap = function(size){
 }
 
 WorldMap.prototype= {
-
-  createNewTile: function(element,x,y){
-    switch(element) {
-        case "orcs":
-            this.grid.grid[x][y] = 2 ;
-            break;
-        case "elves":
-            this.grid.grid[x][y] = 3;
-            break;
-        default:
-            this.grid.grid[x][y] = 0;
-    }
-  },
 
   drawMap: function(){
     for (var y = 0; y < this.grid.size; y++) {
@@ -62,16 +48,17 @@ WorldMap.prototype= {
   },
 
   createRandomNums: function() {
-    rnd1 = 10*Math.random().floor;
-    rnd2 = 10*Math.random().floor;
+    var rnd1 = Math.floor(10*Math.random());
+    var rnd2 = Math.floor(10*Math.random());
+    console.log(rnd1, rnd2);
     return [rnd1, rnd2];
   },
 
   addVillage: function(raceNum){
-    var randoms = createRandomNums();    
-
-    if (this.grid.grid.randoms[0].randoms[1] === 0) {
-      this.grid.grid.randoms[0].randoms[1] = raceNum;
+    var randoms = this.createRandomNums();    
+    console.log(randoms);
+    if (this.grid.grid[randoms[0]][randoms[1]] === 0) {
+      this.grid.grid[randoms[0]][randoms[1]] = raceNum;
       return true;
     } else {
       return false;
