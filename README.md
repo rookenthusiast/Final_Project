@@ -26,4 +26,3 @@ Advanced Extensions:
 
 Create an AI that can do all of the above and interact with the player (offline version)
 Add player vs player capability (online version if server possible)
- 
