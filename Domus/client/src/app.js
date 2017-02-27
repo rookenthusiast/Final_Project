@@ -1,6 +1,13 @@
+const UI = require("./views/ui");
 
+class App {
 
-window.onload = function(){
-    <h1> App Started </h1>,
-    document.getElementById('app');  
+constructor(){
+  this.ui = UI;
 }
+
+}
+
+
+window.onload = App; 
+
