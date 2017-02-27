@@ -1,10 +1,10 @@
 const UI = require("./views/Ui.js");
 
-var app = function(){
+var App = function(){
   const ui = new UI();
 }
 
 
 
-window.onload = app; 
+window.onload = App; 
 
