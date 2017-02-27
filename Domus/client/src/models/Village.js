@@ -1,4 +1,7 @@
-import React from 'react';
+var json = require('../../../village.json');
+var unit = require('Unit.js');
+var resource = require('Resource.js');
+var race = require('Race.js');
 
 class Village {
 

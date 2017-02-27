@@ -1,4 +1,4 @@
-import React from 'react';
+var village = require('Village.js');
 
 class Player {
 

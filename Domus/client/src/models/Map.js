@@ -1,3 +1,5 @@
+var village = require('Village.js');
+
 class Map {
 
   constructor(size) {
