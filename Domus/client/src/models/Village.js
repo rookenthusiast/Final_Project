@@ -5,12 +5,16 @@ var race = require('./Race.js');
 
 class Village {
 
-  constructor(owned_by, coordinates, resources, race) {
-    this.owned_by = owned_by;
+  constructor(owner, coordinates, race) {
+    this.owner = owner;
     this.buildings = [];
     // coordinates is an object {x:1,y:2}
     this.coordinates = coordinates;
-    this.resources = resources;
+    this.resources = [{
+      food: 100,
+      wood: 100,
+      gold: 100
+    }];
     this.race = race;
     this.garrison = [];
   }

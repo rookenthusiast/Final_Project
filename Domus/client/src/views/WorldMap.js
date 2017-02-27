@@ -1,4 +1,5 @@
 var Grid = require('../models/Grid.js');
+var Village = require('../models/Village.js');
 
 var WorldMap = function(size){
  this.grid = new Grid(size);
@@ -33,6 +34,23 @@ WorldMap.prototype= {
           self.context.drawImage(this, this.xPos, this.yPos, 100, 100);
         };
       }
+    }
+  },
+
+  createRandomNums: function() {
+    rnd1 = 10*Math.random().floor;
+    rnd2 = 10*Math.random().floor;
+    return [rnd1, rnd2];
+  },
+
+  addVillage: function(raceNum){
+    var randoms = createRandomNums();    
+
+    if (this.grid.grid.randoms[0].randoms[1] === 0) {
+      this.grid.grid.randoms[0].randoms[1] = raceNum;
+      return true;
+    } else {
+      return false;
     }
   }
 }
