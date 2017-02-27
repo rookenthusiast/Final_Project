@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-class UserPortal extends React.Component {
+class LogIn extends React.Component {
   render(){
    return(
    <div>
@@ -11,4 +11,4 @@ class UserPortal extends React.Component {
   }
 }
 
-export default UserPortal;
+export default LogIn;

@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-class WorldMap extends React.Component {
+class Settlement extends React.Component {
   render(){
     return(
     <div>
-      
+      <p> this is a view of a settlement </p>
     </div>
     )
   }
 }
 
-export default WorldMap;
+export default Settlement;
