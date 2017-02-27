@@ -1,4 +1,4 @@
-const UI = require("./views/ui");
+const UI = require("./views/Ui.js");
 
 var app = function(){
   const ui = new UI();

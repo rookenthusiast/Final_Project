@@ -1,5 +1,5 @@
-var map = require('Map.js');
-var player = require('Player.js');
+var map = require('./Map.js');
+var player = require('./Player.js');
 
 class Game {
 
@@ -8,4 +8,4 @@ class Game {
   }
 }
 
-export default Game;
+module.exports = Game;

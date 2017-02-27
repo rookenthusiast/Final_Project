@@ -1,11 +1,9 @@
-
+var WorldMap = require('./WorldMap.js');
 
 class UI {
-
-constructor(){
-
+  constructor() {
+    new WorldMap(5);
+  }
 }
 
-}
-
-export default UI;
+module.exports = UI;

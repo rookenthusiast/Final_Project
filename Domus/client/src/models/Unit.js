@@ -7,4 +7,4 @@ class Unit {
   }
 }
 
-export default Unit;
+module.exports = Unit;

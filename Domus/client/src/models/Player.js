@@ -1,4 +1,4 @@
-var village = require('Village.js');
+var village = require('./Village.js');
 
 class Player {
 
@@ -10,4 +10,4 @@ class Player {
   }
 }
 
-export default Player;
+module.exports = Player;

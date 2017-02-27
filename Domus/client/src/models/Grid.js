@@ -1,6 +1,6 @@
-var village = require('Village.js');
+var village = require('./Village.js');
 
-class Map {
+class Grid {
 
   constructor(size) {
     this.size = size;
@@ -15,8 +15,7 @@ class Map {
         this.grid[i].push(0);
       }
     }
-    console.log(this.grid);
   }
 }
 
-export default Map;
+module.exports = Grid;
