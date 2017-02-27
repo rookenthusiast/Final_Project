@@ -5,6 +5,7 @@ import WorldMap from './containers/WorldMap.jsx'
 import UserPortal from './containers/UserPortal.jsx'
 
 
+
 window.onload = function(){
   ReactDOM.render(
     <div>
@@ -13,6 +14,5 @@ window.onload = function(){
     <WorldMap/>
     <UserPortal/>
     </div>,
-    document.getElementById('app')
   );
 }
