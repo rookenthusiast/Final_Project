@@ -35,6 +35,7 @@ class Village {
     
     for (let resource of keys) {
       Math.floor(this.buildings[building].cost[resource] *= this.buildings[building].cost_multiplier);
+    }
   }
 }
 

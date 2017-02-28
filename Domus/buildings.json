@@ -144,7 +144,6 @@
     "max_level": 20,
     "base_defence": 200,
     "base_def_mult_per_level": 1.04,
-    // will find a way to add 5% total (including unit) defence per level somehow
     "base_cost": {
       "food": 10,
       "wood": 30,
