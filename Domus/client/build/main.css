@@ -5,16 +5,18 @@ body {
 }
 
 canvas {
-  position: fixed;
+  position: absolute;
   width: 100%;
   height: 100%;
   margin: 0;
 }
 
+.front_page_logo {
+  margin: 0 auto;
+}
+
 .entry_portal_button {
   color: red;
-  position: absolute;
-  align-content: center;
   margin: 0 auto;
 }
 
@@ -23,7 +25,7 @@ canvas {
   color: white;
   position: fixed;
   width: 100%;
-  height: 100px;
+  height: 180px;
   bottom: 0;
   left: 0;
 }
@@ -32,7 +34,7 @@ canvas {
   background-image: url(images/orc_skull_pattern.jpg); 
   position: fixed;
   color: white;
-  width: 50%;
+  width: 25%;
   height: 100%;
   right: 0;
   top: 0;
