@@ -11,6 +11,13 @@ canvas {
   margin: 0;
 }
 
+.entry_portal_button {
+  color: red;
+  position: absolute;
+  align-content: center;
+  vertical-align: center;
+}
+
 .bottomNavBar {
   background-image: url(images/orc_black_sand.jpg);
   color: white;
