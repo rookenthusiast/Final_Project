@@ -1,5 +1,3 @@
-var json = require('../../../unit.json');
-
 class Unit {
 
   constructor() {

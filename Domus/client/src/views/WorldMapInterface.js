@@ -2,16 +2,26 @@ var WorldMap = require('./WorldMap.js')
 
 var WorldMapInterface = function(){
   this.WorldMap = new WorldMap(15)
+  this.createSideInfoBar();
   this.createBottomNavBar();
 }
 
 WorldMapInterface.prototype= {
-  createBottomNavBar: function(){
+
+  createSideInfoBar: function(){
    var body = document.querySelector('body');
    var sideBar = document.createElement('div');
-   sideBar.className ='sideBar'; 
-   sideBar.innerText = "I am a sidebar";
+   sideBar.className = "sideBar";
+   sideBar.innerText = "I am a sideBar";
    body.appendChild(sideBar);
+  },
+
+  createBottomNavBar: function(){
+   var body = document.querySelector('body');
+   var BottomNavBar = document.createElement('div');
+   BottomNavBar.className ='bottomNavBar'; 
+   BottomNavBar.innerText = "I am a navBar";
+   body.appendChild(BottomNavBar);
   }
 }
 
