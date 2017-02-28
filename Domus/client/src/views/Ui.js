@@ -1,8 +1,8 @@
-var WorldMapInterface = require('./WorldMapInterface.js');
+var UserPortal = require('./UserPortal.js');
 
 class UI {
   constructor() {
-    new WorldMapInterface(15);
+    new UserPortal();
   }
 }
 

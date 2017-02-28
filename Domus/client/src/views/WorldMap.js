@@ -3,6 +3,13 @@ var Grid = require('../models/Grid.js');
 
 var WorldMap = function(size){
  this.grid = new Grid(size);
+ var body = document.querySelector('body');
+ var canvas = document.createElement('canvas');
+ canvas.id = 'main-canvas';
+ canvas.width = 1000
+ canvas.height = 1000
+ body.appendChild(canvas);
+
  this.canvas = document.querySelector('#main-canvas');
  this.context = this.canvas.getContext('2d');
  this.addVillage(3);

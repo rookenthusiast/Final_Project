@@ -1,12 +1,18 @@
 var WorldMap = require('./WorldMap.js')
 
 var WorldMapInterface = function(){
-  this.WorldMap = new WorldMap(15)
-  this.createSideInfoBar();
-  this.createBottomNavBar();
+  this.createWorldMapInterface();
 }
 
 WorldMapInterface.prototype= {
+
+  createWorldMapInterface: function(){
+    var body = document.querySelector('body');
+    body.innerHTML = null;
+    this.WorldMap = new WorldMap(15);
+    this.createSideInfoBar();
+    this.createBottomNavBar();
+  },
 
   createSideInfoBar: function(){
    var body = document.querySelector('body');
