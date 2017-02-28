@@ -1,5 +1,5 @@
 var Grid = require('../models/Grid.js');
-// var Village = require('../models/Village.js');
+var Village = require('../models/Village.js');
 
 var WorldMap = function(size){
  this.grid = new Grid(size);
@@ -55,8 +55,8 @@ WorldMap.prototype= {
   },
 
   createRandomNums: function() {
-    var rnd1 = Math.floor(10*Math.random());
-    var rnd2 = Math.floor(10*Math.random());
+    var rnd1 = Math.floor(15*Math.random());
+    var rnd2 = Math.floor(15*Math.random());
     console.log(rnd1, rnd2);
     return [rnd1, rnd2];
   },
@@ -66,6 +66,8 @@ WorldMap.prototype= {
     console.log(randoms);
     if (this.grid.grid[randoms[0]][randoms[1]] === 0) {
       this.grid.grid[randoms[0]][randoms[1]] = raceNum;
+      const newVillage = new Village({x: rnd1, y: rnd2}, raceNum);
+      
       return true;
     } else {
       return false;
