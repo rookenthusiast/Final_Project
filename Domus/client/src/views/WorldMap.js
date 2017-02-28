@@ -66,8 +66,7 @@ WorldMap.prototype= {
     console.log(randoms);
     if (this.grid.grid[randoms[0]][randoms[1]] === 0) {
       this.grid.grid[randoms[0]][randoms[1]] = raceNum;
-      const newVillage = new Village({x: rnd1, y: rnd2}, raceNum);
-      
+      const newVillage = new Village({x: randoms[0], y: randoms[0]}, raceNum);
       return true;
     } else {
       return false;
