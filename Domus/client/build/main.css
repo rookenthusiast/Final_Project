@@ -15,7 +15,7 @@ canvas {
   color: red;
   position: absolute;
   align-content: center;
-  vertical-align: center;
+  margin: 0 auto;
 }
 
 .bottomNavBar {
