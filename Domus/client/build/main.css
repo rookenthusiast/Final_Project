@@ -12,11 +12,13 @@ canvas {
 }
 
 .front_page_logo {
+  position: absolute;
   margin: 0 auto;
 }
 
 .entry_portal_button {
   color: red;
+  width: 20%;
   margin: 0 auto;
 }
 
