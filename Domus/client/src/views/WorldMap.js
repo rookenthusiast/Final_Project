@@ -65,14 +65,20 @@ WorldMap.prototype= {
   },
 
   addVillage: function(raceNum){
-    var randoms = this.createRandomNums();    
-    console.log(randoms);
+    var randoms = this.createRandomNums();  
+    var hasSpace = this.grid.reduce(function (spaceBoolean, row) {
+      if (row.includes(0)) {
+        spaceBoolean = true;
+      }
+    }, false);
+    if (!hasSpace) {
+      return;
+    }
     if (this.grid.grid[randoms[0]][randoms[1]] === 0) {
       this.grid.grid[randoms[0]][randoms[1]] = raceNum;
       var newVillage = new Village({x: randoms[0], y: randoms[1]}, raceNum);
-      return true;
     } else {
-      return false;
+      this.addVillage();
     }
   },
 
