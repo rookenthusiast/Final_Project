@@ -28,7 +28,6 @@ WorldMap.prototype= {
   drawMap: function(){
     for (var y = 0; y < this.grid.size; y++) {
       for (var x = 0; x < this.grid.size; x++ ) {
-        // var tile = new Image();
         var tile = document.createElement('img');
         tile.xPos = x * 50;
         tile.yPos = y * 50;

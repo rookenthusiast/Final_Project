@@ -1,3 +1,5 @@
+var Village = require("../models/Village.js")
+
 var VillageView = function(){
 
 }
@@ -11,7 +13,7 @@ VillageView.prototype = {
   },
 
   createVillageDiv: function(){
-    
+
   }
 }
 
