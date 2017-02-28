@@ -1,7 +1,7 @@
 class Unit {
 
-  constructor() {
-    
+  constructor(type) {
+    this.type = type;
   }
 }
 
