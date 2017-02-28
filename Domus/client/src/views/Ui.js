@@ -1,8 +1,8 @@
-var WorldMap = require('./WorldMap.js');
+var WorldMapInterface = require('./WorldMapInterface.js');
 
 class UI {
   constructor() {
-    new WorldMap(10);
+    new WorldMapInterface(15);
   }
 }
 

@@ -1,5 +1,5 @@
 var Grid = require('../models/Grid.js');
-var Village = require('../models/Village.js');
+// var Village = require('../models/Village.js');
 
 var WorldMap = function(size){
  this.grid = new Grid(size);
