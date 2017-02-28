@@ -1,8 +1,75 @@
 [{
- "name": "Swordsman",
-  "attack": 
+  "name": "Bowman",
+  "attack_type": "general",
+  "cost": {
+    "Food": 40,
+    "wood": 20,
+    "gold": 15
+  },
+  "population": 1,
+  "attack": 25,
+  "defence": 40,
+  "cavalry_defence": 10
 },
-
 {
-  
-}]
+  "name": "Spearman",
+  "attack_type": "general",
+  "cost": {
+    "Food": 30,
+    "wood": 30,
+    "gold": 10
+  },
+  "population": 1,
+  "attack": 10,
+  "defence": 15,
+  "cavalry_defence": 45
+},
+{
+  "name": "Knight",
+  "attack_type": "general",
+  "cost": {
+    "Food": 60,
+    "wood": 40,
+    "gold": 100
+  },
+  "population": 2,
+  "attack": 60,
+  "defence": 60,
+  "cavalry_defence": 50
+},
+{ 
+  "name": "Horseman",
+  "attack_type": "cavalry",
+  "cost": {
+    "Food": 100,
+    "wood": 50,
+    "gold": 180
+  },
+  "population": 3,
+  "attack": 110,
+  "defence": 50,
+  "cavalry_defence": 30},
+{ 
+  "name": "Royal guard",
+  "attack_type": "cavalry",
+  "cost": {
+    "Food": 150,
+    "wood": 100,
+    "gold": 200
+  },
+  "population": 5,
+  "attack": 80,
+  "defence": 180,
+  "cavalry_defence": 150},
+{ 
+  "name": "Trebuchet",
+  "attack_type": "general",
+  "cost": {
+    "Food": 60,
+    "wood": 200,
+    "gold": 250
+  },
+  "population": 6,
+  "attack": 100,
+  "defence": 80,
+  "cavalry_defence": 50}]
