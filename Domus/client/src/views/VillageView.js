@@ -8,6 +8,10 @@ VillageView.prototype = {
     body.innerHTML = null;
     var viewContainer = document.createElement('div');
     viewContainer.id = "village_view_container";
+  },
+
+  createVillageDiv: function(){
+    
   }
 }
 

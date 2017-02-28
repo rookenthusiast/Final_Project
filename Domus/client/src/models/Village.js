@@ -1,5 +1,4 @@
 var unit = require('./Unit.js');
-var resource = require('./Resource.js');
 var race = require('./Race.js');
 var buildings = require('../../../buildings.json');
 

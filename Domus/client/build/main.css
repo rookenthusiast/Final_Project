@@ -4,12 +4,12 @@ body {
   margin: 0;
 }
 
-canvas {
+/*canvas {
   position: absolute;
   width: 100%;
   height: 100%;
   margin: 0;
-}
+}*/
 
 .front_page_logo {
   position: absolute;

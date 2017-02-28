@@ -8,7 +8,7 @@ WorldMapInterface.prototype= {
   createWorldMapInterface: function(){
     var body = document.querySelector('body');
     body.innerHTML = null;
-    this.WorldMap = new WorldMap(15);
+    this.WorldMap = new WorldMap(10);
 
     console.log(this);
 

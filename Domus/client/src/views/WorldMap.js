@@ -7,8 +7,8 @@ var WorldMap = function(size){
  var body = document.querySelector('body');
  var canvas = document.createElement('canvas');
  canvas.id = 'main-canvas';
- canvas.width = 1000
- canvas.height = 1000
+ canvas.width = 500;
+ canvas.height = 500;
  body.appendChild(canvas);
 
  this.canvas = document.querySelector('#main-canvas');
@@ -17,15 +17,17 @@ var WorldMap = function(size){
  this.drawMap();
 
  this.canvas.onclick = function (event) {
-  console.log(event);
- }
+  var xCoord = event.offsetX;
+  var yCoord = event.offsetY;
+  this.onClickHandlerToVillage(xCoord, yCoord);
+ }.bind(this)
 }
 
 WorldMap.prototype= {
 
   drawMap: function(){
     for (var y = 0; y < this.grid.size; y++) {
-      for (var x = 0; x < this.grid.size; x++) {
+      for (var x = 0; x < this.grid.size; x++ ) {
         // var tile = new Image();
         var tile = document.createElement('img');
         tile.xPos = x * 50;
@@ -56,8 +58,8 @@ WorldMap.prototype= {
   },
 
   createRandomNums: function() {
-    var rnd1 = Math.floor(15*Math.random());
-    var rnd2 = Math.floor(15*Math.random());
+    var rnd1 = Math.floor(10*Math.random());
+    var rnd2 = Math.floor(10*Math.random());
     console.log(rnd1, rnd2);
     return [rnd1, rnd2];
   },
@@ -72,6 +74,11 @@ WorldMap.prototype= {
     } else {
       return false;
     }
+  },
+
+  onClickHandlerToVillage: function(xCoord, yCoord){
+    var coordinates = [Math.floor(xCoord/50), Math.floor(yCoord/50)]
+    console.log(coordinates);
   }
 }
 
