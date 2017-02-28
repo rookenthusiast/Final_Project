@@ -14,7 +14,13 @@ WorldMapInterface.prototype= {
    sideBar.className = "sideBar";
    sideBar.innerText = "I am a sideBar";
    body.appendChild(sideBar);
+
+   var information = document.createElement('p')
+   information.innerText = "This side bar will be for information on the clicked village"
+   sideBar.appendChild(information);
   },
+
+
 
   createBottomNavBar: function(){
    var body = document.querySelector('body');
