@@ -20,7 +20,7 @@ class Village {
   upgradeBuilding(building) {
     this.buildings[building].level++;
 
-    const keys = Object.keys(this.buildings.base_cost)
+    const keys = Object.keys(this.buildings.base_cost);
     
     for (let resource of keys) {
       Math.floor(this.buildings[building].cost[resource] *= this.buildings[building].cost_multiplier);
@@ -29,7 +29,13 @@ class Village {
     }
   }
 
-
+  calculateCost(building) {
+    const keys = Object.keys(this.buildings.base_cost);
+    const lvl = this.buildings[building].level;
+    
+    for (let resource of keys) {
+      Math.floor(this.buildings[building].cost[resource] *= this.buildings[building].cost_multiplier);
+  }
 }
 
 module.exports = Village;
