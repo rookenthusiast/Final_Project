@@ -16,7 +16,6 @@ class Village {
       gold: 100
     }];
     this.race = race;
-    this.garrison = [];
   }
 }
 
