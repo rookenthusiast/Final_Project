@@ -15,7 +15,7 @@ class Village {
       "Horseman": 0,
       "Royal guard": 0,
       "Trebuchet": 0
-    }]
+    }];
     this.resources = [{
       food: 100,
       wood: 100,
