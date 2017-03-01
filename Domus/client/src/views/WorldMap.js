@@ -4,6 +4,8 @@ var VillageView = require('./VillageView.js')
 
 var WorldMap = function(size){
  this.grid = new Grid(size);
+ var jgrid = JSON.stringify(this.grid.grid)
+ db.game.maps.insert(jgrid);
  var body = document.querySelector('body');
  var canvas = document.createElement('canvas');
  canvas.id = 'main-canvas';
@@ -20,7 +22,7 @@ var WorldMap = function(size){
   var xCoord = event.offsetX;
   var yCoord = event.offsetY;
   this.onClickHandlerToVillage(xCoord, yCoord);
- }.bind(this)
+}.bind(this)
 }
 
 WorldMap.prototype= {
@@ -64,27 +66,30 @@ WorldMap.prototype= {
   },
 
   addVillage: function(raceNum){
-    var randoms = this.createRandomNums();  
-    var hasSpace = this.grid.reduce(function (spaceBoolean, row) {
-      if (row.includes(0)) {
-        spaceBoolean = true;
-      }
-    }, false);
+    var randoms = this.createRandomNums();
+    console.log("add village started");  
+    var flattenedGrid = [].concat.apply([], this.grid.grid)
+    var hasSpace = flattenedGrid.includes(0);
+
     if (!hasSpace) {
       return;
     }
-    if (this.grid.grid[randoms[0]][randoms[1]] === 0) {
-      this.grid.grid[randoms[0]][randoms[1]] = raceNum;
-      var newVillage = new Village({x: randoms[0], y: randoms[1]}, raceNum);
-    } else {
-      this.addVillage();
+    else if 
+      (this.grid.grid[randoms[0]][randoms[1]] === 0) {
+        this.grid.grid[randoms[0]][randoms[1]] = raceNum;
+        var newVillage = new Village({x: randoms[0], y: randoms[1]}, raceNum);
+        var jvillage =JSON.stringify(newVillage);
+        db.game.maps.villages.insert(jvillage);
+      } else {
+        console.log("calling add village")
+        this.addVillage(raceNum);
+      }
+    },
+
+    onClickHandlerToVillage: function(xCoord, yCoord){
+      var coordinates = [Math.floor(xCoord/50), Math.floor(yCoord/50)]
+      console.log(coordinates);
     }
-  },
-
-  onClickHandlerToVillage: function(xCoord, yCoord){
-    var coordinates = [Math.floor(xCoord/50), Math.floor(yCoord/50)]
-    console.log(coordinates);
   }
-}
 
-module.exports = WorldMap;
+  module.exports = WorldMap;
