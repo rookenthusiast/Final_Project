@@ -13,6 +13,12 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname + '/client/build/index.html'));
 });
 
+app.get('/savedgames', function (req, res) {
+  query.all(function (docs) {
+    res.json(docs)
+  })
+})
+
 app.post('/savedgames', function (req, res) {
   var data = req.body;
 

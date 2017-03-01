@@ -4,10 +4,10 @@ var buildings = require('../../../buildings.json');
 
 class Village {
 
-  constructor(coordinates, race) {
+  constructor(options) {
     this.buildings = Object.create(buildings);
     // coordinates is an object {x:1,y:2}
-    this.coordinates = coordinates;
+    this.coordinates = {x: options.x, y: options.y};
     this.units = [{
       "Bowman": 0,
       "Spearman": 0,
@@ -21,7 +21,7 @@ class Village {
       wood: 100,
       gold: 100
     }];
-    this.race = race;
+    this.race = options.race;
   }
 
   upgradeBuilding(building) {

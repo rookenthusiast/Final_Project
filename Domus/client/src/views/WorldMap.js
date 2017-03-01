@@ -1,6 +1,6 @@
 var Grid = require('../models/Grid.js');
 var Village = require('../models/Village.js');
-var VillageView = require('./VillageView.js')
+var VillageView = require('./VillageView.js');
 
 var WorldMap = function(size){
  this.grid = new Grid(size);
@@ -13,7 +13,7 @@ var WorldMap = function(size){
 
  this.canvas = document.querySelector('#main-canvas');
  this.context = this.canvas.getContext('2d');
- this.addVillage(3);
+ this.checkForGame();
  this.drawMap();
 
  this.canvas.onclick = function (event) {
@@ -40,12 +40,9 @@ WorldMap.prototype= {
           tile.src = 'images/water_tile.gif';
         }
 
-        if (this.grid.grid[y][x] === 2) {
-          tile.src = 'images/orc_skull_base.png';
-        }
-
-        if (this.grid.grid[y][x] === 3) {
+        if (this.grid.grid[y][x].race === 3) {
           tile.src = 'images/elf_tree.png';
+          console.log('VILLAGE')
         }
 
         var self = this;
@@ -56,6 +53,20 @@ WorldMap.prototype= {
     }
   },
 
+  checkForGame: function(){
+    var request = new XMLHttpRequest();
+    request.open('GET', '/savedgames');
+    request.setRequestHeader('Content-Type', 'application/json');
+    console.log(request);
+
+    var savedGameState = request
+    if (savedGameState){
+      return;
+    } else {
+      this.addVillage();
+    }
+  },
+
   createRandomNums: function() {
     var rnd1 = Math.floor(10*Math.random());
     var rnd2 = Math.floor(10*Math.random());
@@ -63,7 +74,7 @@ WorldMap.prototype= {
     return [rnd1, rnd2];
   },
 
-  addVillage: function(raceNum){
+  addVillage: function(){
     var randoms = this.createRandomNums();
     console.log("add village started");  
     var flattenedGrid = [].concat.apply([], this.grid.grid)
@@ -72,13 +83,16 @@ WorldMap.prototype= {
     if (!hasSpace) {
       return;
     }
-    else if 
+    else if
       (this.grid.grid[randoms[0]][randoms[1]] === 0) {
-        this.grid.grid[randoms[0]][randoms[1]] = raceNum;
-        var newVillage = new Village({x: randoms[0], y: randoms[1]}, raceNum);
+        var newVillage = new Village({x: randoms[0], y: randoms[1], race: 3});
+        this.grid.grid[randoms[0]][randoms[1]] = newVillage;
+
+        
         
         var jgrid = JSON.stringify({ gameState: this.grid.grid });
         console.log(jgrid)
+        
         
         var request = new XMLHttpRequest();
         request.open('POST', '/savedgames');
