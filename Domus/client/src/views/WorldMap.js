@@ -5,7 +5,7 @@ var VillageView = require('./VillageView.js')
 var WorldMap = function(size){
  this.grid = new Grid(size);
  var jgrid = JSON.stringify(this.grid.grid)
- db.game.maps.insert(jgrid);
+ // db.game.maps.insert(jgrid);
  var body = document.querySelector('body');
  var canvas = document.createElement('canvas');
  canvas.id = 'main-canvas';
@@ -79,7 +79,7 @@ WorldMap.prototype= {
         this.grid.grid[randoms[0]][randoms[1]] = raceNum;
         var newVillage = new Village({x: randoms[0], y: randoms[1]}, raceNum);
         var jvillage =JSON.stringify(newVillage);
-        db.game.maps.villages.insert(jvillage);
+        // db.game.maps.villages.insert(jvillage);
       } else {
         console.log("calling add village")
         this.addVillage(raceNum);
