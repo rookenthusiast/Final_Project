@@ -13,7 +13,8 @@ var WorldMap = function(size){
 
  this.canvas = document.querySelector('#main-canvas');
  this.context = this.canvas.getContext('2d');
- this.checkForGame();
+ this.addVillage();
+ // this.checkForGame();
  this.drawMap();
 
  this.canvas.onclick = function (event) {
@@ -53,19 +54,24 @@ WorldMap.prototype= {
     }
   },
 
-  checkForGame: function(){
-    var request = new XMLHttpRequest();
-    request.open('GET', '/savedgames');
-    request.setRequestHeader('Content-Type', 'application/json');
-    console.log(request);
-
-    var savedGameState = request
-    if (savedGameState){
-      return;
-    } else {
-      this.addVillage();
-    }
-  },
+  // checkForGame: function(){
+  //   console.log("hello im being called")
+  //   var request = new XMLHttpRequest();
+  //   request.open('GET', '/savedgames');
+  //   request.setRequestHeader('Content-Type', 'application/json');
+  //   request.onload = function(){
+  //     console.log(request.status);
+  //     if (request.status === 200){
+  //       var savedGameState = JSON.parse(request.responseText);
+  //       console.log(savedGameState);
+  //     }
+  //     if (savedGameState !== null){
+  //       return;
+  //     } else {
+  //       this.addVillage();
+  //     }
+  //   }
+  // },
 
   createRandomNums: function() {
     var rnd1 = Math.floor(10*Math.random());
@@ -88,12 +94,12 @@ WorldMap.prototype= {
         var newVillage = new Village({x: randoms[0], y: randoms[1], race: 3});
         this.grid.grid[randoms[0]][randoms[1]] = newVillage;
 
-        
-        
+
+
         var jgrid = JSON.stringify({ gameState: this.grid.grid });
         console.log(jgrid)
-        
-        
+
+
         var request = new XMLHttpRequest();
         request.open('POST', '/savedgames');
         request.setRequestHeader('Content-Type', 'application/json')
@@ -101,7 +107,7 @@ WorldMap.prototype= {
         request.onload = function() {
           console.log("status", request.status);
         }
-        
+
         request.send(jgrid);
       } else {
         console.log("calling add village")
